@@ -2,7 +2,7 @@
 
 Installation is not the easiest at the moment and is therefor aimed primarily at fellow developers with experience.
 
-## Software and Technology
+### Software and Technology
 
 indrz is built on the shoulders of the following open source projects
 
@@ -21,7 +21,7 @@ Bootstrap       | MIT copyright 2015 Twitter
 
 
 
-## Requirements
+### Requirements
 
   1. PostgreSQL 9.5.x
   1. PostGIS 2.2.x
@@ -29,7 +29,7 @@ Bootstrap       | MIT copyright 2015 Twitter
   1. Python 3.4 + recommended and 2.9 +
   1. Django 1.9 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
 
-## Instructions
+### Instructions
 
 1. Install PostgreSQL, this I will leave up to you and some googleling
 1. Install PostGIS Extension for your PostgreSQL install
@@ -42,7 +42,7 @@ Bootstrap       | MIT copyright 2015 Twitter
 Help is here check out the GIT repo and start [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
 
 
-## Windows users
+### Windows users
 
 
 Create a python virtual environment
@@ -56,7 +56,7 @@ enter virtual env
 C:\> C:\virtualenv\Scripts\activate.bat 
 (virtualenv) C:\> easy_install psycopg2-2.5.4.win32-py2.7-pg9.3.5-release.exe
 ```
-## Postgresql installation and setup
+### Postgresql installation and setup
 
 To create a working database for your indrz application you will need to run 
 the following SQL to create a role, schemas, and extensions.
@@ -104,12 +104,12 @@ sudo apt-get install postgresql-9.5-postgis-2.2 pgadmin3 postgresql-contrib-9.5
 sudo apt-get install postgresql-9.5-pgrouting
 ```
 
-## Installation with Docker
+### Installation with Docker
 
 this will be awesome...coming soon
 
 
-## Get the indrz GIT repostiory Started
+### Get the indrz GIT repostiory Started
 
 
 [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
