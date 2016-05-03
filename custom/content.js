@@ -17,4 +17,6 @@ module.exports =
   '# Directions\n' +
   fs.readFileSync('./content/directions.md', 'utf8') + '\n' +
   '# Buildings\n' +
-  fs.readFileSync('./content/buildings.md', 'utf8') + '\n';
+  fs.readFileSync('./content/buildings.md', 'utf8') + '\n' +
+  '# Geodata\n' +
+  fs.readFileSync('./content/geodata.md', 'utf8') + '\n';
