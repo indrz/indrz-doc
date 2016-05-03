@@ -6,20 +6,15 @@ Welcome to the open source indrz indoor wayfinding web applciation.  Indrz is a 
 
 ## First steps
 
-This is the place to start! so get reading
-
- 1.[indrz Installation !](installation/readme.md)
+This is the place to start! so get reading [indrz Installation !] (installation.md)
 
 
-## indrz API Documentation
+## indrz API Introduction
 
-note work in progress...
-
-Learn about the [indrz API !](https://github.com/indrz/indrz/tree/master/docs/api)
+note all docs are constantly being updated Learn about the [indrz API introduction] (introduction.md)
 
 
 ## The indrz open-source project
-
 
 Learn about the development process for the indrz project itself and about how
 you can contribute:
