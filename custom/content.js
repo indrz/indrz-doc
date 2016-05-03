@@ -12,5 +12,9 @@ var fs = require('fs');
 module.exports =
   '# Introduction\n' +
   fs.readFileSync('./content/introduction.md', 'utf8') + '\n' +
-  '# Example\n' +
-  fs.readFileSync('./content/directions.md', 'utf8') + '\n';
+  '# Installation\n' +
+  fs.readFileSync('./content/installation.md', 'utf8') + '\n' +
+  '# Directions\n' +
+  fs.readFileSync('./content/directions.md', 'utf8') + '\n' +
+  '# Buildings\n' +
+  fs.readFileSync('./content/buildings.md', 'utf8') + '\n';
