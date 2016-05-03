@@ -81,6 +81,20 @@ ALTER ROLE indrz SET search_path = django, geodata, public;
 CREATE EXTENSION postgis;
 CREATE EXTENSION pgrouting;
 
+
+### Ubuntu or Linux Debian installs for Postgresql
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt trusty-pgdg main" >> /etc/apt/sources.list'
+wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+
+### Install Postgresql 9.5, PostGIS
+sudo apt-get install postgresql-9.5-postgis-2.2 pgadmin3 postgresql-contrib-9.5
+
+### Install pgRouting 2.1 package 
+sudo apt-get install postgresql-9.5-pgrouting
+
+
 ## Installation with Docker
 
 this will be awesome...coming soon
