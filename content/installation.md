@@ -26,8 +26,10 @@ Bootstrap       | MIT copyright 2015 Twitter
   1. PostgreSQL 9.5.x
   1. PostGIS 2.2.x
   1. pgRouting 2.x
-  1. Python 3.4 + recommended and 2.9 +
+  1. Python 3.4 + recommended or Python 2.9 +
   1. Django 1.9 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
+  1. Web Server such as Apache
+  1. Geoserver to server your maps as WMS server, style your data (best with Tomcat)
 
 ### Instructions
 
@@ -35,6 +37,8 @@ Bootstrap       | MIT copyright 2015 Twitter
 1. Install PostGIS Extension for your PostgreSQL install
 1. Install PgRouting Extension for your PostgreSQL install
 1. Create a database [follow these SQL scripts in order] (../../scripts/sql)
+1. Install Geoserver or some other map server to server your maps [http://docs.geoserver.org/latest/en/user/installation/index.html#installation]
+1. Connect your Geoserver with your Postgresql DB
 1. Install Python
 1. Install Django
 1. Install all other python repos with pip
