@@ -19,6 +19,26 @@ Our documentation structure and build environment is built upon the [mapbox docb
 [indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
 
 
+## Building blocks Libraries we use
+
+* [Django](http://djangoproject.com) – Web Framework Backend
+* [Django Rest Framework](http://www.django-rest-framework.org) – Django Rest Web Framework our API
+* [PostGIS](http://postgis.net) – Spatial Database extension to Postgresql
+* [PGRouting](http://pgrouting.org) - Routing extension to PostGIS and Posgresql
+* [Postgresql](http://www.postgresql.org) – Database
+* [Geoserver](http://geoserver.org) – Web map server to serve and create, maps and data
+* [Openlayers 3](http://openlayers.org) – Slippy client side javascript mapping library
+* [Bootstrap css](http://bootstrap.com/) - css framework bootstrap
+* Not YET implemented [Angularjs](http://angularjs.org/) - Javascript framework
+* Not YET implemented [three.js](http://threejs.org) - 3d Javascript library
+* will be depreciated [jQuery Mobile js](http://http://jquerymobile.com) - mobile web pages made easy
+* Not YET implemented [ionic Framework](http://ionicframework.com) - hybrid mobile apps with html 5
+* Not YET implemented [Gulpjs js](http://gulpjs.com) - js building 
+
+## Licence
+indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.  Other than that you can do what you want accordingly 
+
+
 ## What is indrz?
 indrz is open source software API to provide indoor maps and routing directions. 
  indrz will allow you to integrate indoor maps and routing services into your homepage or application.  
@@ -116,24 +136,6 @@ Task | Skill
     
 
 
-## Building blocks Libraries we use
-
-* [Django](http://djangoproject.com) – Web Framework Backend
-* [Django Rest Framework](http://www.django-rest-framework.org) – Django Rest Web Framework our API
-* [PostGIS](http://postgis.net) – Spatial Database extension to Postgresql
-* [PGRouting](http://pgrouting.org) - Routing extension to PostGIS and Posgresql
-* [Postgresql](http://www.postgresql.org) – Database
-* [Geoserver](http://geoserver.org) – Web map server to serve and create, maps and data
-* [Openlayers 3](http://openlayers.org) – Slippy client side javascript mapping library
-* [Bootstrap css](http://bootstrap.com/) - css framework bootstrap
-* Not YET implemented [Angularjs](http://angularjs.org/) - Javascript framework
-* Not YET implemented [three.js](http://threejs.org) - 3d Javascript library
-* will be depreciated [jQuery Mobile js](http://http://jquerymobile.com) - mobile web pages made easy
-* Not YET implemented [ionic Framework](http://ionicframework.com) - hybrid mobile apps with html 5
-* Not YET implemented [Gulpjs js](http://gulpjs.com) - js building 
-
-## Licence
-indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.  Other than that you can do what you want accordingly 
 
 ## Supporters
 A big shout out to the following supporters for sharing the open source love
