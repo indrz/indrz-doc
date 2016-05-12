@@ -164,6 +164,13 @@ C:\> C:\virtualenv\Scripts\activate.bat
 (virtualenv) C:\> easy_install psycopg2-2.5.4.win32-py2.7-pg9.3.5-release.exe
 ```
 
+### Production ready installation
+To run indrz in a production environment you need to check the following:
+1. Install a production ready server such nginx, apache etc...
+2. Geoserver installation with Tomcat and secure java and tomcat
+3. run the entire webpage with HTTPS using a SSL certificate is recommended
+
+For further details talk to your server administrator or see any postings on production Django deployment.
 
 ### Installation with Docker
 
