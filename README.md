@@ -2,6 +2,11 @@
 Project homepage [www.indrz.com] (http://www.indrz.com)
 digital wayfinding indoors, maps, orientation and indoor routing for buildings large or small, app or webpage.
 
+[![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Star&maxAge=2592000?style=flat-square)](https://github.com/indrz/indrz/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues-raw/badges/shields.svg?maxAge=2592000?style=flat-square)](https://github.com/indrz/indrz/issues)
+[![GitHub release](https://img.shields.io/github/release/qubyte/rubidium.svg?maxAge=2592000?style=flat-square)](https://github.com/indrz/indrz/releases)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?maxAge=2592000?style=flat-square)](https://github.com/indrz/indrz/blob/master/LICENSE)
+[![Python Support](https://img.shields.io/pypi/pyversions/wq.io.svg)](https://pypi.python.org/pypi/wq.io)
 
 ## Documentation
 
