@@ -3,7 +3,12 @@ Project homepage [www.indrz.com] (http://www.indrz.com)
 digital wayfinding indoors, maps, orientation and indoor routing for buildings large or small, app or webpage.
 
 ## What is indrz?
-indrz is open source software to provide indoor maps and routes for buildings.  indrz will allow you to integrate indoor maps and routing services into your homepage or application.  If you work at a university or other organization and need an online wayfinder [www.indrz.com] (www.indrz.com) will offer our services to build or host it for you.  Our business model is like Mapbox, free open source software and payed services such as data conversion, preparation or import.  The [www.indrz.com] (www.indrz.com) cloud based platform can host the solution for you.
+indrz is open source software API to provide indoor maps and routing directions. 
+ indrz will allow you to integrate indoor maps and routing services into your homepage or application.  
+ If you work at a university or other organization and need an online wayfinder [www.indrz.com] (www.indrz.com) 
+ will offer our services to build or host it for you.  Our business model is like Mapbox, free open source software 
+ and payed services such as data conversion, preparation or import.  The [www.indrz.com] (www.indrz.com) cloud based 
+ platform can host the solution for you.
 
 Indrz was developed out of the need to quickly communicate
 how to get from point A to point B in a complex set of buildings.
@@ -15,17 +20,15 @@ to help the students out indrz was born.
 
 Our documentation is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) structure for static documentation generation with react.js.
 
-
-You can find our documentation project here [indrz Docs] (https://github.com/indrz/indrz-doc)
-
+[indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
 
 [indrz introduction to API] (https://github.com/indrz/indrz-doc/blob/master/content/introduction.md)
 
-[indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
-
 [indrz Directions API] (https://github.com/indrz/indrz-doc/blob/master/content/directions.md)
 
-[indrz Working with GeoData] (https://github.com/indrz/indrz/tree/master/docs/geodata)
+[indrz Buildings API] (https://github.com/indrz/indrz-doc/blob/master/content/buildings.md)
+
+[indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
 
 
 ## Supported and built by:
@@ -86,15 +89,13 @@ We can do this for you but if you know how you will need to know how to make the
 
 ## Translations
 Translations are hosted by [Transifex here]  (https://www.transifex.com/organization/indrz/dashboard)
-Currently supported languages include English and German
+Currently we have translations for English and German, feel free to add your language.
 
 ### Current branches in use
 * indrz Wirtschafts Universität Wien  indrz-campus (http://campus.wu.ac.at)
 * indrz library [Vienna University of Economics and Business Administration Library](http://gis.wu.ac.at/?key=ST%20261.w34%20G744)
 * indrz business park [Lakeside Science & Technology Park](http://ws1.gomogi.com/lakeside/Firmensuche.html)
 * indrz Alpen Adria University Klagenfurt indzr-campus (http://campus-gis.aau.at)
-
-[Indrz Campus](http://www.indrz.com) is a indoor cloud mapping, wayfinding platform.[GIT Project Page](https://github.com/indrz/indrz).  It allows you to find your way around in an indoor environment such as large building complexes. The man behind it is [Michael Diener](http://twitter.com/spatialmounty) &mdash; [get in touch](#contact--community) if you'd like to discuss the project in more detail.
 
 
 ## Contact & community
@@ -105,7 +106,7 @@ indrz would love your help. There are more than enough things to get done so we 
 
 Task | Skill 
 --- | --- 
-`write documentation` | writer
+`write documentation` | anyone
 `write translations` | multi-lingual
 `submit bug report` | write detailed
 `fix bugs` | git, coding
@@ -160,6 +161,3 @@ We are looking to expand our horizons
 
 
 We want to make sure every one can find there way with ease and make them aware of how wayfinding works teaching you at the same time how to find your way in any and every indoor environment.
-
- 
-
