@@ -134,14 +134,6 @@ COMMENT ON FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, int
 ```
 
 
-### Ubuntu or Linux Debian installs for Postgresql
- 
-```bash
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt trusty-pgdg main" >> /etc/apt/sources.list'
-wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
-sudo apt-get update
-```
-
 ## Setup the project and code
 1. create a folder to host the code
 2. clone the code into directory
