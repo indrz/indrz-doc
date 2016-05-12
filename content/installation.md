@@ -4,7 +4,7 @@ Installation is not the easiest at the moment and is therefor aimed primarily at
 
 ### Software and Technology
 
-indrz is built on the shoulders of the following open source projects
+indrz is built on the shoulders of the following open source projects and should run on any OS such as Ubuntu, CentOS, Redhat
 
 Software      | License
 ------------- | -------------
@@ -32,6 +32,8 @@ Bootstrap       | MIT copyright 2015 Twitter
   1. Geoserver to server your maps as WMS server, style your data (best with Tomcat)
 
 ### Instructions
+
+The instructions that will follow are based on the OS  Ubuntu 14.04 LTS Linux 64bit server.  
 
 1. Install PostgreSQL, this I will leave up to you and some googleling
 1. Install PostGIS Extension for your PostgreSQL install
