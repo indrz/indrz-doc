@@ -2,7 +2,7 @@
 Project homepage [www.indrz.com] (http://www.indrz.com)
 digital wayfinding indoors, maps, orientation and indoor routing for buildings large or small, app or webpage.
 
-[![GitHub stars](https://img.shields.io/github/stars/indrz.svg)](https://github.com/indrz/indrz/stargazers)
+[![GitHub Stars](https://img.shields.io/github/stars/indrz/indrz.svg)](https://github.com/indrz/indrz/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/indrz/indrz.svg)](https://github.com/indrz/indrz/issues)
 [![GitHub release](https://img.shields.io/github/release/indrz/indrz.svg)](https://github.com/indrz/indrz/releases)
 [![license](https://img.shields.io/indrz/license/indrz.svg)](https://github.com/indrz/indrz/blob/master/LICENSE)
