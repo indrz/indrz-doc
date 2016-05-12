@@ -35,15 +35,12 @@ Bootstrap       | MIT copyright 2015 Twitter
 
 The instructions that will follow are based on the OS  Ubuntu 14.04 LTS Linux 64bit server.  
 
-1. Install PostgreSQL, this I will leave up to you and some googleling
-1. Install PostGIS Extension for your PostgreSQL install
-1. Install PgRouting Extension for your PostgreSQL install
+1. Install PostgreSQL,PostGIS and pgRouting [instructions here osgeo] (https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS22UbuntuPGSQL95Apt)
 1. Create a database [follow these SQL scripts in order] (../../scripts/sql)
 1. Install Geoserver or some other map server to server your maps [http://docs.geoserver.org/latest/en/user/installation/index.html#installation]
 1. Connect your Geoserver with your Postgresql DB
-1. Install Python
-1. Install Django
-1. Install all other python repos with pip
+1. Install Python (only needed on Windows)
+1. Install Django and all other python repos with pip and our requirements.txt
 
 Help is here check out the GIT repo and start [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
 
@@ -63,6 +60,26 @@ C:\> C:\virtualenv\Scripts\activate.bat
 (virtualenv) C:\> easy_install psycopg2-2.5.4.win32-py2.7-pg9.3.5-release.exe
 ```
 ### Postgresql installation and setup
+
+```bash
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt trusty-pgdg main" >> /etc/apt/sources.list'
+wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install postgresql-9.5-postgis-2.2 pgadmin3 postgresql-contrib-9.5
+# Install pgRouting 2.1 package 
+sudo apt-get install postgresql-9.5-pgrouting
+
+#create a new database called indrz
+createdb -p 5432 -h localhost -E UTF8 -T template0 -e indrz
+```
+
+Now login
+```bash
+sudo -u postgres psql
+```
+Create extension Postgis
+
+CREATE EXTENSION postgis;
 
 To create a working database for your indrz application you will need to run 
 the following SQL to create a role, schemas, and extensions.
@@ -88,6 +105,45 @@ CREATE EXTENSION postgis;
 CREATE EXTENSION pgrouting;
 ```
 
+### 2nd Modify standard pgRouting function for  3d pgRouting
+This step is necessary to allow 3DDistance calculations for our routes that
+travel over multiple buliding levels.  Please RUN this sql with copy paste in pgAdmin for example.
+```sql
+-- Function: public.pgr_pointtoid3d(geometry, double precision, text, integer)
+
+-- DROP FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, integer);
+
+CREATE OR REPLACE FUNCTION public.pgr_pointtoid3d(point geometry, tolerance double precision, vertname text, srid integer)
+  RETURNS bigint AS
+$BODY$ 
+DECLARE
+    rec record; 
+    pid bigint; 
+
+BEGIN
+    execute 'SELECT ST_3DDistance(the_geom,ST_GeomFromText(st_astext('||quote_literal(point::text)||'),'||srid||')) AS d, id, the_geom
+        FROM '||pgr_quote_ident(vertname)||'
+        WHERE ST_DWithin(the_geom, ST_GeomFromText(st_astext('||quote_literal(point::text)||'),'||srid||'),'|| tolerance||')
+        ORDER BY d
+        LIMIT 1' INTO rec ;
+    IF rec.id is not null THEN
+        pid := rec.id;
+    ELSE
+        execute 'INSERT INTO '||pgr_quote_ident(vertname)||' (the_geom) VALUES ('||quote_literal(point::text)||')';
+        pid := lastval();
+    END IF;
+
+    RETURN pid;
+
+END;
+$BODY$
+  LANGUAGE plpgsql VOLATILE STRICT
+  COST 100;
+ALTER FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, integer)
+  OWNER TO postgres;
+COMMENT ON FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, integer) IS 'args: point geometry,tolerance,verticesTable,srid - inserts the point into the vertices table using tolerance to determine if its an existing point and returns the id assigned to it';
+
+```
 
 
 ### Ubuntu or Linux Debian installs for Postgresql
