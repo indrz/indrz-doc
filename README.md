@@ -2,6 +2,23 @@
 Project homepage [www.indrz.com] (http://www.indrz.com)
 digital wayfinding indoors, maps, orientation and indoor routing for buildings large or small, app or webpage.
 
+
+## Documentation
+
+Our documentation structure and build environment is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) nodejs static
+ documentation generator.  The main content is found under the (content) folder.
+
+[indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
+
+[indrz introduction to API] (https://github.com/indrz/indrz-doc/blob/master/content/introduction.md)
+
+[indrz Directions API] (https://github.com/indrz/indrz-doc/blob/master/content/directions.md)
+
+[indrz Buildings API] (https://github.com/indrz/indrz-doc/blob/master/content/buildings.md)
+
+[indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
+
+
 ## What is indrz?
 indrz is open source software API to provide indoor maps and routing directions. 
  indrz will allow you to integrate indoor maps and routing services into your homepage or application.  
@@ -14,21 +31,6 @@ Indrz was developed out of the need to quickly communicate
 how to get from point A to point B in a complex set of buildings.
 Being late for your first class is never a good thing, so
 to help the students out indrz was born.
-
-
-## Documentation
-
-Our documentation is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) structure for static documentation generation with react.js.
-
-[indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
-
-[indrz introduction to API] (https://github.com/indrz/indrz-doc/blob/master/content/introduction.md)
-
-[indrz Directions API] (https://github.com/indrz/indrz-doc/blob/master/content/directions.md)
-
-[indrz Buildings API] (https://github.com/indrz/indrz-doc/blob/master/content/buildings.md)
-
-[indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
 
 
 ## Supported and built by:
