@@ -150,6 +150,11 @@ sudo apt-get update
 5. python manage.py runserver
 6. open localhost:8000/map/test    to see a map with the demo data
 
+## Geoserver
+Geoserver is what we have chose to server our maps at www.indrz.com.  This is not a must and can easily be replaced with any other mapping server such as the UMN  Mapserver.  Our geoserver connects to our database and renders our WMS services for displaying each building floor on the map.  We create one geoserver data layer for each floor in a building.  The style we assign to each building-space is created using our SLD files.  These of course are simple design settings and can be changed at any time.
+
+Securing your data on Geoserver is left up to you the developer or administrator.
+
 ### Windows users
 
 Create a python virtual environment
