@@ -137,7 +137,7 @@ COMMENT ON FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, int
 ## Setup the project and code
 1. create a folder to host the code
 2. clone the code into directory
-3. run pip install -f requirement.txt   to install necessary python libraries
+3. pip install -r /path/to/requirements.txt  to install necessary python libraries
 4. change into source folder /indrz
 5. python manage.py runserver
 6. open localhost:8000/map/test    to see a map with the demo data
