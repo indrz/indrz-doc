@@ -10,12 +10,12 @@ Software      | License
 ------------- | -------------
 PostgreSQL 9.5  | PostgreSQL License [similar to the BSD or MIT licenses.] (http://www.postgresql.org/about/licence/)
 Postgis 2.2     | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
-pgRouting 2.x   | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
-python 3.x & 2.x    | PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
+pgRouting 2.0   | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
+python 3.4 & 2.7    | PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
 Django 1.9      | Django Software Foundation  a type BSD
 GDAL            | [MIT] (http://choosealicense.com/licenses/mit/) 
 Geoserver       | GNU General Public License (GPLv2), plus Apache 2.0
-Openlayers 3.x  | 2-Clause BSD
+Openlayers 3.12  | 2-Clause BSD
 jQuery          | [MIT] (http://choosealicense.com/licenses/mit/) 
 Bootstrap       | MIT copyright 2015 Twitter
 
@@ -34,32 +34,18 @@ Bootstrap       | MIT copyright 2015 Twitter
 ### Instructions
 
 The instructions that will follow are based on the OS  Ubuntu 14.04 LTS Linux 64bit server.  
-
+#### Quick run down on what you need to install
 1. Install PostgreSQL,PostGIS and pgRouting [instructions here osgeo] (https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS22UbuntuPGSQL95Apt)
-1. Create a database [follow these SQL scripts in order] (../../scripts/sql)
 1. Install Geoserver or some other map server to server your maps [http://docs.geoserver.org/latest/en/user/installation/index.html#installation]
-1. Connect your Geoserver with your Postgresql DB
-1. Install Python (only needed on Windows)
+1. Install Python (only required on Windows)
 1. Install Django and all other python repos with pip and our requirements.txt
-
-Help is here check out the GIT repo and start [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
-
-
-### Windows users
+1. Fork indrz repo  Help is here check out the GIT repo and start [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
 
 
-Create a python virtual environment
-Download pyscopg2 windows binary http://www.stickpeople.com/projects/python/win-psycopg/index.2.5.4.html
-
-Create python virtual env
-
-enter virtual env
-
-```bash
-C:\> C:\virtualenv\Scripts\activate.bat 
-(virtualenv) C:\> easy_install psycopg2-2.5.4.win32-py2.7-pg9.3.5-release.exe
-```
 ### Postgresql installation and setup
+It is suggested that you read the official docs for Postgresql here is a good link
+(https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS22UbuntuPGSQL95Apt)
+we have placed a copy of this below:
 
 ```bash
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt trusty-pgdg main" >> /etc/apt/sources.list'
@@ -71,22 +57,27 @@ sudo apt-get install postgresql-9.5-pgrouting
 
 #create a new database called indrz
 createdb -p 5432 -h localhost -E UTF8 -T template0 -e indrz
+createuser -p 5432 -h localhost -D -E indrz-user
 ```
 
-Now login
+Now login from command line
 ```bash
 sudo -u postgres psql
 ```
-Create extension Postgis
-
+execture sql to create postgis extension
+```sql
+-- install postgis and pgrouting extensions
 CREATE EXTENSION postgis;
+CREATE EXTENSION postgis_topology;
+CREATE EXTENSION pgrouting;
+```
 
 To create a working database for your indrz application you will need to run 
 the following SQL to create a role, schemas, and extensions.
 
 ```sql
 -- create a new user for your DB
-CREATE ROLE indrz-pg LOGIN ENCRYPTED PASSWORD 'bigsecret'
+CREATE ROLE indrz-user LOGIN ENCRYPTED PASSWORD 'bigsecret'
    VALID UNTIL 'infinity';
    
 -- create a new schema to store all your tables
@@ -100,9 +91,6 @@ CREATE SCHEMA geodata AUTHORIZATION indrz-pg;
 
 ALTER ROLE indrz SET search_path = django, geodata, public;
 
--- install postgis and pgrouting extensions
-CREATE EXTENSION postgis;
-CREATE EXTENSION pgrouting;
 ```
 
 ### 2nd Modify standard pgRouting function for  3d pgRouting
@@ -154,17 +142,28 @@ wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo ap
 sudo apt-get update
 ```
 
-### Install Postgresql 9.5, PostGIS
+## Setup the project and code
+1. create a folder to host the code
+2. clone the code into directory
+3. run pip install -f requirement.txt   to install necessary python libraries
+4. change into source folder /indrz
+5. python manage.py runserver
+6. open localhost:8000/map/test    to see a map with the demo data
+
+### Windows users
+
+Create a python virtual environment
+Download pyscopg2 windows binary http://www.stickpeople.com/projects/python/win-psycopg/index.2.5.4.html
+
+Create python virtual env
+
+enter virtual env
 
 ```bash
-sudo apt-get install postgresql-9.5-postgis-2.2 pgadmin3 postgresql-contrib-9.5
+C:\> C:\virtualenv\Scripts\activate.bat 
+(virtualenv) C:\> easy_install psycopg2-2.5.4.win32-py2.7-pg9.3.5-release.exe
 ```
 
-### Install pgRouting 2.1 package 
-
-```bash
-sudo apt-get install postgresql-9.5-pgrouting
-```
 
 ### Installation with Docker
 
