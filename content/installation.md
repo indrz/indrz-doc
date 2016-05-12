@@ -132,15 +132,72 @@ ALTER FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, integer)
 COMMENT ON FUNCTION public.pgr_pointtoid3d(geometry, double precision, text, integer) IS 'args: point geometry,tolerance,verticesTable,srid - inserts the point into the vertices table using tolerance to determine if its an existing point and returns the id assigned to it';
 
 ```
+### Create indrz user
+```bash
+adduser indrz
+usermod --home /opt/indrz -m indrz #-m moves files too
+```
+```bash
+su indrz
+```
+if you get a python error on logging into the new user, run:
+```bash
+dpkg-reconfigure virtualenvwrapper
+```
 
+### checkout indrz from github
+```bash
+cd ~
+git clone https://github.com/indrz/indrz.git indrz
+cd indrz
+git checkout stable
+```
 
-## Setup the project and code
-1. create a folder to host the code
-2. clone the code into directory
-3. pip install -r /path/to/requirements.txt  to install necessary python libraries
-4. change into source folder /indrz
-5. python manage.py runserver
-6. open localhost:8000/map/test    to see a map with the demo data
+### Create postgres user
+
+```bash
+sudo -u postgres createuser indrz # answer no, no, no
+sudo -u postgres createdb indrz -O indrz
+```
+
+### Create virtualenv
+```bash
+cd indrz
+mkvirtualenv -p /usr/bin/python3.4 indrz
+```
+install the requirements using pip.
+If you have problems, make sure you have the right version of pip installed
+you may need to use pip3
+```bash
+pip install -r requirements.txt
+```
+load the demo campus, building, space, routing, data
+```bash
+python manage.py migrate --noinput
+python manage.py loaddata initial_user
+python manage.py loaddata initial_project_templates
+python manage.py loaddata initial_role
+python manage.py collectstatic --noinput
+```
+
+### Configure your settings
+
+```
+cp settings/local.py.example settings/local.py
+nano settings/local.py
+```
+
+### Start indrz server locally with Django built in server
+```
+workon indrz
+python manage.py runserver
+```
+
+### Test if it is running 
+```
+lynx http://localhost:8000/api/v1/ 
+```
+
 
 ## Geoserver
 Geoserver is what we have chose to server our maps at www.indrz.com.  This is not a must and can easily be replaced with any other mapping server such as the UMN  Mapserver.  Our geoserver connects to our database and renders our WMS services for displaying each building floor on the map.  We create one geoserver data layer for each floor in a building.  The style we assign to each building-space is created using our SLD files.  These of course are simple design settings and can be changed at any time.
