@@ -1,14 +1,14 @@
 {
-  "name": "docbox",
+  "name": "indrz-docbox",
   "version": "1.0.1",
-  "description": "an api documentation website",
+  "description": "indrz api documentation website",
   "main": "index.js",
   "scripts": {
     "start": "budo src/index.js --serve=bundle.js --live",
     "test": "npm run test-unit && eslint src && npm run prerender -- /dev/null && rm -rf lib",
     "test-unit": "mocha --compilers js:babel-register test",
     "prerender": "babel src --out-dir lib && node lib/render.js",
-    "build": "NODE_ENV=production browserify src/index.js | uglifyjs -c -m > bundle.js && npm run prerender -- index.html"
+    "build": "NODE_ENV=production browserify src/index.js | uglifyjs -c -m > bundle.js && npm run prerender -- build/index.html"
   },
   "browserify": {
     "transform": [
