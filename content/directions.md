@@ -1,100 +1,23 @@
-## indrz Buildings API
+## indrz Directions API
 
-This is our high-quality buildings API. You can use this API to request
-and remove different buildings.
+Welcome to the indoor directions API. You can use this API to request directions.
 
-### List Buildings
+### Retrieve directions using only coordinates
+url(r'^directions/(?P<start_coord>[-]?\d+\.?\d+,\d+\.\d+),(?P<start_floor>[-]?\d+)&(?P<end_coord>[-]?\d+\.?\d+,\d+\.\d+),(?P<end_floor>[-]?\d+)&(?P<route_type>[0-9])/$', 'create_route_from_coords'
 
-Lists all buildings for a particular campus.
+Returns a single route between two point coordinates.
 
 ```endpoint
-GET /api/v1/{username} building:read
+GET /api/v1/directions/{start_coord},{start_floor}&{end_coord},{end_floor}&{route_type}
 ```
+
+Retrieve route coordinate in a request
 
 #### Example request
 
 ```curl
-$ curl https://www.indrz.com/api/v1/{username}
+curl https://www.indrz.com/api/v1/directions/{start_coord},{start_floor}&{end_coord},{end_floor}&{route_type}
 ```
-
-```bash
-$ wbl building list
-```
-
-```javascript
-client.listbuilding(function(err, building) {
-  console.log(building);
-});
-```
-
-```python
-building.list()
-```
-
-#### Example response
-
-```json
-[
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  },
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  }
-]
-```
-
-### Create building
-
-Creates a new, empty building.
-
-```endpoint
-POST /api/v1/{username}
-```
-
-#### Example request
-
-```curl
-curl -X POST https://www.indrz.com/api/v1/{username}
-```
-
-```bash
-$ wbl building create
-```
-
-```javascript
-client.createbuilding({
-  name: 'example',
-  description: 'An example building'
-}, function(err, building) {
-  console.log(building);
-});
-```
-
-```python
-response = indrz.create(
-  name='example', description='An example building')
-```
-
-#### Example request body
-
-```json
-{
-  "name": "foo",
-  "description": "bar"
-}
-```
-
-Property | Description
----|---
-`name` | (optional) the name of the building
-`description` | (optional) a description of the building
 
 #### Example response
 
@@ -102,14 +25,19 @@ Property | Description
 {
   "owner": "{username}",
   "id": "{building_id}",
-  "name": null,
-  "description": null,
   "created": "{timestamp}",
   "modified": "{timestamp}"
 }
 ```
 
-### Retrieve a building
+#url(r'^directions/(?P<start_room_key>\d{5})&(?P<end_room_key>\d{5})&(?P<route_type>[0-9])/$', 'route_room_to_room', name='route-room-to-room'),
+url(r'^directions/(?P<building_id>buildingid=\d{1,5})&(?P<start_room_id>startid=\d{1,5})&(?P<end_room_id>endid=\d{1,5})(?P<route_type>&type=\d{1,5})?/$',
+    'create_route_from_id', name='routing-from-id'),
+url(r'^directions/(?P<building_id>buildingid=\d{1,5})&(?P<start_term>startid=.+)&(?P<end_term>endid=.+)(?P<route_type>&type=\d{1,5})?/$',
+    'create_route_from_search', name='routing-from-search'),
+url(r'^directions/force_mid/', 'force_route_mid_point', name='force-route-midpoint')
+
+### Retrieve directions
 
 Returns a single building.
 
