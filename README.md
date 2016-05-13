@@ -1,6 +1,7 @@
-# indrz open source wayfinding, routting, navigation
+# indrz open source wayfinding, directions api, routing, navigation
 Project homepage [www.indrz.com] (http://www.indrz.com)
-digital wayfinding indoors, maps, orientation and indoor routing for buildings large or small, app or webpage.
+digital wayfinding indoors, maps, orientation and indoor routing for a campus, hospital, shopping mall, airport... large or small
+
 
 [![GitHub stars](https://img.shields.io/github/stars/indrz/indrz.svg?style=flat-square)](https://github.com/indrz/indrz/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/indrz/indrz.svg)](https://github.com/indrz/indrz/issues)
