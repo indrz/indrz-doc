@@ -16,7 +16,11 @@ module.exports =
   fs.readFileSync('./content/installation.md', 'utf8') + '\n' +
   '# Directions\n' +
   fs.readFileSync('./content/directions.md', 'utf8') + '\n' +
+  '# Campus\n' +
+  fs.readFileSync('./content/campus.md', 'utf8') + '\n' +
   '# Buildings\n' +
   fs.readFileSync('./content/buildings.md', 'utf8') + '\n' +
+  '# Spaces\n' +
+  fs.readFileSync('./content/space.md', 'utf8') + '\n' +
   '# Geodata\n' +
   fs.readFileSync('./content/geodata.md', 'utf8') + '\n';
