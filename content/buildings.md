@@ -1,11 +1,11 @@
 ## indrz Buildings API
 
-This is our high-quality buildings API. You can use this API to request
-and remove different buildings.
+The following Buildings API manages information related to buildings. You can use this API to request
+and remove different buildings and related building information such as spaces
 
 ### List Buildings
 
-Lists all buildings for a particular campus.
+Lists all buildings located with in a specified campus area.  A building is always located on a campus.
 
 ```endpoint
 GET /api/v1/{username} building:read
@@ -17,9 +17,6 @@ GET /api/v1/{username} building:read
 $ curl https://www.indrz.com/api/v1/{username}
 ```
 
-```bash
-$ wbl building list
-```
 
 ```javascript
 client.listbuilding(function(err, building) {
