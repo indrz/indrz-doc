@@ -3,18 +3,19 @@
 The following Buildings API manages information related to buildings. You can use this API to request
 and remove different buildings and related building information such as spaces
 
-### List Buildings
+
+### List Buildings on campus
 
 Lists all buildings located with in a specified campus area.  A building is always located on a campus.
 
 ```endpoint
-GET /api/v1/{username} building:read
+GET /api/v1/building/campus/{campus_id}
 ```
 
 #### Example request
 
 ```curl
-$ curl https://www.indrz.com/api/v1/{username}
+$ curl https://www.indrz.com/api/v1/building/campus/{campus_id}
 ```
 
 
@@ -32,18 +33,23 @@ building.list()
 
 ```json
 [
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  },
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  }
+    {
+        "id": 1,
+        "building_name": "",
+        "num_floors": 0,
+        "buildingfloor_set": [
+            {
+                "id": 2,
+                "short_name": "Etage 0",
+                "floor_num": 0,
+                "fk_building": 1,
+                "buildingfloorspace_set": {
+                    "type": "FeatureCollection",
+                    "features": []
+                }
+            }
+        ]
+    }
 ]
 ```
 
