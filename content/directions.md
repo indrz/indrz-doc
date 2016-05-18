@@ -1,6 +1,6 @@
 ## indrz Directions API
 
-Welcome to the indoor directions/ routing API. You can use this API to request indoor routes / directions across campuses and buildings indoors and outdoors.
+Welcome to the indoor directions/ routing API. You can use this API to request indoor routes / directions across campuses and buildings indoors and outdoors.  This API offers multi-level navigation connecting indivdual building levels through cooridors such as stairs, elevators, escalators or ramps.  Route types are available such as barrierer free for wheelchair access.
 
 ### Retrieve directions using only coordinates and a floor number
 here is the regular expression
