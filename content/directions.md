@@ -1,6 +1,6 @@
 ## indrz Directions API
 
-Welcome to the indoor directions API. You can use this API to request indoor routing directions.
+Welcome to the indoor directions/ routing API. You can use this API to request indoor routes and directions.
 
 ### Retrieve directions using only coordinates and a floor number
 here is the regular expression
