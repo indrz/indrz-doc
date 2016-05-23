@@ -23,13 +23,13 @@ Bootstrap       | MIT copyright 2015 Twitter
 
 ### Requirements
 
-  1. PostgreSQL 9.5.x
-  1. PostGIS 2.2.x
-  1. pgRouting 2.x
+  1. PostgreSQL 9.5.x plus the extensions  PostGIS 2.2.x and pgRouting 2.x
   1. Python 3.4 + recommended or Python 2.9 +
   1. Django 1.9 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
-  1. Web Server such as Apache
-  1. Geoserver to server your maps as WMS server, style your data (best with Tomcat)
+
+Your choice 
+  1. A Web Server such as Apache or Nginx
+  1. A Map web server such as Geoserver to server your maps as WMS server, style your data (best with Tomcat)
 
 ### Instructions
 
