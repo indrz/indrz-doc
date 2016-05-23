@@ -36,13 +36,14 @@ Your choice
 The instructions that will follow are based on the OS  Ubuntu 14.04 LTS Linux 64bit server.  
 #### Quick run down on what you need to install
 1. Install PostgreSQL,PostGIS and pgRouting [instructions here osgeo] (https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS22UbuntuPGSQL95Apt)
-1. Install Geoserver or some other map server to server your maps [http://docs.geoserver.org/latest/en/user/installation/index.html#installation]
 1. Install Python (only required on Windows)
 1. Install Django and all other python repos with pip and our requirements.txt
 1. Fork indrz repo  Help is here check out the GIT repo and start [GIT how to fork indrz] (https://help.github.com/articles/fork-a-repo/)
+1. Install Geoserver or some other map server to style and create map layers for each building level [http://docs.geoserver.org/latest/en/user/installation/index.html#installation]
+1. Install a webserver such as Apache or Nginx to host your application
 
 
-### Postgresql installation and setup
+### Postgresql 9.5 installation and setup on Ubuntu 14.04
 It is suggested that you read the official docs for Postgresql here is a good link
 (https://trac.osgeo.org/postgis/wiki/UsersWikiPostGIS22UbuntuPGSQL95Apt)
 we have placed a copy of this below:
@@ -56,8 +57,8 @@ sudo apt-get install postgresql-9.5-postgis-2.2 pgadmin3 postgresql-contrib-9.5
 sudo apt-get install postgresql-9.5-pgrouting
 
 #create a new database called indrz
-createdb -p 5432 -h localhost -E UTF8 -T template0 -e indrz
 createuser -p 5432 -h localhost -D -E indrz-user
+createdb -p 5432 -h localhost -E UTF8 -T template0 -O indrz-user -e indrz
 ```
 
 Now login from command line
@@ -76,10 +77,6 @@ To create a working database for your indrz application you will need to run
 the following SQL to create a role, schemas, and extensions.
 
 ```sql
--- create a new user for your DB
-CREATE ROLE indrz-user LOGIN ENCRYPTED PASSWORD 'bigsecret'
-   VALID UNTIL 'infinity';
-   
 -- create a new schema to store all your tables
 CREATE SCHEMA django AUTHORIZATION indrz-pg;
 CREATE SCHEMA geodata AUTHORIZATION indrz-pg;
@@ -158,6 +155,7 @@ git checkout stable
 ```bash
 sudo -u postgres createuser indrz # answer no, no, no
 sudo -u postgres createdb indrz -O indrz
+
 ```
 
 ### Create virtualenv
@@ -175,8 +173,9 @@ load the demo campus, building, space, routing, data
 ```bash
 python manage.py migrate --noinput
 python manage.py loaddata initial_user
-python manage.py loaddata initial_project_templates
-python manage.py loaddata initial_role
+python manage.py loaddata initial_demo_campus
+python manage.py loaddata initial_demo_buildings
+python manage.py loaddata initial_demo_spaces
 python manage.py collectstatic --noinput
 ```
 
