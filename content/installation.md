@@ -1,6 +1,7 @@
 ## Installation
 
 Installation is not the easiest at the moment and is therefor aimed primarily at fellow developers with experience.
+We hope to get a python script or bash script running soon.
 
 ### Software and Technology
 
