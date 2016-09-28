@@ -170,7 +170,7 @@ you may need to use pip3
 ```bash
 pip install -r requirements.txt
 ```
-load the demo campus, building, space, routing, data
+NOT IMPLEMENTED (load the demo campus, building, space, routing, data) but coming soon..
 ```bash
 python manage.py migrate --noinput
 python manage.py loaddata initial_user
@@ -191,6 +191,9 @@ nano settings/local.py
 ```
 workon indrz
 python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+
 ```
 
 ### Test if it is running 
