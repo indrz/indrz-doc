@@ -1,25 +1,32 @@
 ## indrz Buildings API
 
-This is our high-quality buildings API. You can use this API to request
-and remove different buildings.
+The following Buildings API manages information related to buildings. You can use this API to request
+and remove different buildings and related building information such as spaces
 
-### List Buildings
+QUICK GUIDE TO ENDPOINTS GET request
+```endpoint
+/buildings/  -return all buildings
+/buildings/{building_id}/   - returns info about a single building with ID
+/buildings/{building_id}/floor/{floor_id}/   -return info about a single floor in a building
+/buildings/{building_id}/floor/{floor_id}/spaces   -return all spaces on specific floor
+/buildings/campus/{campus_id}   -return all buildings on specific campus
+/campus/{campus_id}/buildings   - retrun all building on specific campus
+```
 
-Lists all buildings for a particular campus.
+### List Buildings on campus
+
+Lists all buildings located with in a specified campus area.  A building is always located on a campus.
 
 ```endpoint
-GET /api/v1/{username} building:read
+GET /api/v1/buildings/campus/{campus_id}
 ```
 
 #### Example request
 
 ```curl
-$ curl https://www.indrz.com/api/v1/{username}
+$ curl https://www.indrz.com/api/v1/buildings/campus/{campus_id}
 ```
 
-```bash
-$ wbl building list
-```
 
 ```javascript
 client.listbuilding(function(err, building) {
@@ -35,18 +42,23 @@ building.list()
 
 ```json
 [
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  },
-  {
-    "owner": "{username}",
-    "id": "{building_id}",
-    "created": "{timestamp}",
-    "modified": "{timestamp}"
-  }
+    {
+        "id": 1,
+        "building_name": "",
+        "num_floors": 0,
+        "buildingfloor_set": [
+            {
+                "id": 2,
+                "short_name": "Etage 0",
+                "floor_num": 0,
+                "fk_building": 1,
+                "buildingfloorspace_set": {
+                    "type": "FeatureCollection",
+                    "features": []
+                }
+            }
+        ]
+    }
 ]
 ```
 
@@ -55,13 +67,13 @@ building.list()
 Creates a new, empty building.
 
 ```endpoint
-POST /api/v1/{username}
+POST /api/v1/buildings/
 ```
 
 #### Example request
 
 ```curl
-curl -X POST https://www.indrz.com/api/v1/{username}
+curl -X POST https://www.indrz.com/api/v1/buildings/
 ```
 
 ```bash
@@ -93,7 +105,8 @@ response = indrz.create(
 
 Property | Description
 ---|---
-`name` | (optional) the name of the building
+`name` | the name of the building
+`campus_id` |  the id of the campus the buildings belongs to
 `description` | (optional) a description of the building
 
 #### Example response
@@ -114,7 +127,7 @@ Property | Description
 Returns a single building.
 
 ```endpoint
-GET /api/v1/{username}/{building_id}
+GET /api/v1/buildings/{building_id}
 ```
 
 Retrieve information about an existing building.
@@ -122,7 +135,7 @@ Retrieve information about an existing building.
 #### Example request
 
 ```curl
-curl https://www.indrz.com/api/v1/{username}/{building_id}
+curl https://www.indrz.com/api/v1/buildings/{building_id}
 ```
 
 ```bash
@@ -156,13 +169,13 @@ client.readbuilding('building-id',
 Updates the properties of a particular building.
 
 ```endpoint
-PATCH /api/v1/{username}/{building_id}
+PATCH /api/v1/buildings/{building_id}
 ```
 
 #### Example request
 
 ```curl
-curl --request PATCH https://www.indrz.com/api/v1/{username}/{building_id} \
+curl --request PATCH https://www.indrz.com/api/v1/buildings/{building_id} \
   -d @data.json
 ```
 
@@ -217,13 +230,13 @@ Property | Description
 Deletes a building, including all wibbles it contains.
 
 ```endpoint
-DELETE /api/v1/{username}/{building_id}
+DELETE /api/v1/buildings/{building_id}
 ```
 
 #### Example request
 
 ```curl
-curl -X DELETE https://www.indrz.com/api/v1/{username}/{building_id}
+curl -X DELETE https://www.indrz.com/api/v1/buildings/{building_id}
 ```
 
 ```bash
@@ -250,13 +263,13 @@ List all the buildings in on a campus. The response body will be a
 buildingCollection.
 
 ```endpoint
-GET /api/v1/{username}/{building_id}/campus
+GET /api/v1/buildings/campus/{campus_id}
 ```
 
 #### Example request
 
 ```curl
-curl https://www.indrz.com/api/v1/{username}/{building_id}/campus
+curl https://www.indrz.com/api/v1/buildings/campus/{campus_id}
 ```
 
 ```bash
@@ -295,137 +308,3 @@ client.listindrz('building-id', {}, function(err, collection) {
     }
   ]
 }
-```
-
-### Insert or update a space
-
-Inserts or updates a space in a building. If there's already a space
-with the given ID in the building, it will be replaced. If there isn't
-a space with that ID, a new space is created.
-
-```endpoint
-PUT /api/v1/{username}/{building_id}/campus/{space_id}
-```
-
-#### Example request
-
-```curl
-curl https://www.indrz.com/api/v1/{username}/{building_id}/campus/{space_id} \
-  -X PUT \
-  -d @file.geojson
-```
-
-```bash
-$ wbl building put-campus building-id campus-id 'geojson-campus'
-```
-
-```javascript
-var campus = {
-  "type": "building",
-  "properties": { "name": "Null Island" }
-};
-client.insertbuilding(campus, 'building-id', function(err, wibble) {
-  console.log(campus);
-});
-```
-
-#### Example request body
-
-```json
-{
-  "id": "{space_id}",
-  "type": "building",
-  "properties": {
-    "prop0": "value0"
-  }
-}
-```
-
-Property | Description
---- | ---
-`id` | the id of an existing space in the building
-
-#### Example response
-
-```json
-{
-  "id": "{space_id}",
-  "type": "building",
-  "properties": {
-    "prop0": "value0"
-  }
-}
-```
-
-### Retrieve a space
-
-Retrieves a space in a building.
-
-```endpoint
-GET /api/v1/{username}/{building_id}/campus/{space_id}
-```
-
-#### Example request
-
-```curl
-curl https://www.indrz.com/api/v1/{username}/{building_id}/campus/{space_id}
-```
-
-```bash
-$ wbl building read-space building-id campus-id
-```
-
-```javascript
-client.readbuilding('space-id', 'building-id',
-  function(err, space) {
-    console.log(space);
-  });
-```
-
-```python
-wibble = indrz.read_space(building_id, '2').json()
-```
-
-#### Example response
-
-```json
-{
-  "id": "{space_id}",
-  "type": "building",
-  "properties": {
-    "prop0": "value0"
-  }
-}
-```
-
-### Delete a space
-
-Removes a space from a building.
-
-```endpoint
-DELETE /api/v1/{username}/{building_id}/campus/{space_id}
-```
-
-#### Example request
-
-```javascript
-client.deletebuilding('campus-id', 'building-id', function(err, space) {
-  if (!err) console.log('deleted!');
-});
-```
-
-```curl
-curl -X DELETE https://www.indrz.com/api/v1/{username}/{building_id}/campus/{space_id}
-```
-
-```python
-resp = indrz.delete_space(building_id, campus_id)
-```
-
-```bash
-$ wbl building delete-space building-id campus-id
-```
-
-#### Example response
-
-> HTTP 204

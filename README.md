@@ -43,8 +43,12 @@ Our documentation structure and build environment is built upon the [mapbox docb
 ## Licence
 indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.  Other than that you can do what you want accordingly 
 
+## Mantra
+Find it fast
 
-## What is indrz?
+## What is indrz? the vision
+To make indoor navigation as common as GPS car navigation.
+
 indrz is open source software API to provide indoor maps and routing directions. 
  indrz will allow you to integrate indoor maps and routing services into your homepage or application.  
  If you work at a university or other organization and need an online wayfinder [www.indrz.com] (www.indrz.com) 

@@ -1,6 +1,6 @@
 ## indrz API documentation
 
-Welcome to indrz API documentation.
+Welcome to indrz API documentation for developers.
 
 Welcome to the open source indrz indoor wayfinding web applciation.  Indrz is a project in providing indoor maps, indoor routing and room information for buildings.
 
