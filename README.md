@@ -15,6 +15,8 @@ Our documentation structure and build environment is built upon the [mapbox docb
 
 [indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
 
+[indrz-Production Install](/content/production-install.md)
+
 [indrz introduction to API] (https://github.com/indrz/indrz-doc/blob/master/content/introduction.md)
 
 [indrz Directions API] (https://github.com/indrz/indrz-doc/blob/master/content/directions.md)
