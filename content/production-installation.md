@@ -4,7 +4,7 @@ The indrz application is a **Django Web Framework  WSGI**  web application.  Thi
 # GIT
 The source code is a GIT repository and for ease of update should be cloned onto the production server, so go ahead and [install GIT ](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine
 
-    git clone https://gitlab.com/indrz/indrz-wu.git
+    git clone https://github.com/indrz/indrz.git
 
 # Python
  Our application is a Django application and there for requires Python 3.4.x and Django to be installed along with the other python requirements listed in the requirements.txt file.
@@ -33,7 +33,7 @@ Test your installation
 1. `ctl - c` to kill service
 
 ## Deploy folder
-These folders are the folders holding the code and static resources that are served up live on the site.  The original source code folder is located at /opt/indrz-wu
+These folders are the folders holding the code and static resources that are served up live on the site.  The original source code folder is located at /opt/indrz-src
 These are the locations of the application for deployment:
 
     /opt/django-deploy/indrz       this folder is the main django application folder
@@ -44,7 +44,7 @@ These are the locations of the application for deployment:
 ## nginx
  [Install instructions here](http://nginx.org/en/linux_packages.html). Our webserver of choice, please follow your platform instructions you will find the conf file here:
 
-    /etc/nginx/conf.d/wu_ssl.conf
+    /etc/nginx/conf.d/indrz-ssl.conf
 
 
 ## uwsgi
@@ -67,7 +67,7 @@ Test install
     cd /opt/django-deploy/indrz
     uwsgi --http :8000 --module indrz.wsgi
 
-     uwsgi --socket gis-neu.wu.ac.at:8000 --chdir /opt/django-deploy/indrz/ --wsgi-file indrz/wsgi.py --master --processes 4 --threads 2
+     uwsgi --socket localhost:8000 --chdir /opt/django-deploy/indrz/ --wsgi-file indrz/wsgi.py --master --processes 4 --threads 2
 
 
 ### uwsgi configuration
@@ -76,7 +76,7 @@ file in **/etc/uwsgi/sites/indrz-uwsig.ini**
 
     # mysite_uwsgi.ini file
     [uwsgi]
-    http = gis-neu.wu.ac.at:8000
+    http = localhost:8000
     # Django-related settings
     # the base directory (full path)
     chdir           = /opt/django-deploy/indrz
@@ -115,7 +115,7 @@ File contents of **uwsgi.service**:
     Description=uWSGI Emperor service
     
     [Service]
-    ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown mdiener:nginx /run/uwsgi'
+    ExecStartPre=/usr/bin/bash -c 'mkdir -p /run/uwsgi; chown someusername:nginx /run/uwsgi'
     ExecStart=/usr/bin/uwsgi --emperor /etc/uwsgi/sites
     Restart=always
     KillSignal=SIGQUIT
