@@ -131,8 +131,18 @@ Command to start the uwsgi service  `systemctl start uwsgi`
 
 
 ## Tomcat
-[Install instructions ](https://tomcat.apache.org/tomcat-7.0-doc/appdev/installation.html)Tomcat 7 is needed to run our web map server Geoserver. 
+[Install instructions ](https://tomcat.apache.org/tomcat-7.0-doc/appdev/installation.html)Tomcat 7 is needed to run our web map server Geoserver.   IF you want to run under HTTPS  please read the tomcat instructions on [ssl configuration](http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html#Configuration)
 
+    /usr/share/tomcat/
+    /usr/share/tomcat/conf/server.xml
+
+You will need to restart the tomcat service for any changes to take place.
+
+    systemctl start tomcat
+    systemctl reload tomcat
+    systemctl stop tomcat  # to stop the service
+    
+    
 
 ## Geoserver
 To server our maps we use Geoserver that will run under tomcat. Geoserver is a java application and can be[ downloaded as a WAR file ](http://geoserver.org/release/stable/)  Then all you need to to is extract the .war file into the TOMCAT folder of deployment and it will automatically extract itself and install.  You will need to enable a PORT so that the TILES being served are accessible from outside otherwise visitors to your site will not be able to see the map tiles.
