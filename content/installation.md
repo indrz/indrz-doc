@@ -9,14 +9,14 @@ indrz is built on the shoulders of the following open source projects and should
 
 Software      | License
 ------------- | -------------
-PostgreSQL 9.5  | PostgreSQL License [similar to the BSD or MIT licenses.] (http://www.postgresql.org/about/licence/)
-Postgis 2.2     | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
+PostgreSQL 9.6  | PostgreSQL License [similar to the BSD or MIT licenses.] (http://www.postgresql.org/about/licence/)
+Postgis 2.3     | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
 pgRouting 2.0   | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
 python 3.4 & 2.7    | PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
-Django 1.9      | Django Software Foundation  a type BSD
+Django 1.10      | Django Software Foundation  a type BSD
 GDAL            | [MIT] (http://choosealicense.com/licenses/mit/) 
 Geoserver       | GNU General Public License (GPLv2), plus Apache 2.0
-Openlayers 3.12  | 2-Clause BSD
+Openlayers 3.x  | 2-Clause BSD
 jQuery          | [MIT] (http://choosealicense.com/licenses/mit/) 
 Bootstrap       | MIT copyright 2015 Twitter
 
@@ -26,7 +26,7 @@ Bootstrap       | MIT copyright 2015 Twitter
 
   1. PostgreSQL 9.5.x plus the extensions  PostGIS 2.2.x and pgRouting 2.x
   1. Python 3.4 + recommended or Python 2.9 +
-  1. Django 1.9 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
+  1. Django 1.10 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
 
 Your choice 
   1. A Web Server such as Apache or Nginx
