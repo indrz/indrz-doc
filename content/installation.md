@@ -24,7 +24,7 @@ Bootstrap       | MIT copyright 2015 Twitter
 
 ### Requirements
 
-  1. PostgreSQL 9.5.x plus the extensions  PostGIS 2.2.x and pgRouting 2.x
+  1. PostgreSQL 9.6.x plus the extensions  PostGIS 2.2.x and pgRouting 2.x
   1. Python 3.4 + recommended or Python 2.9 +
   1. Django 1.10 (web framework) + other Django Apps(see requirements.txt) [link to requirements](requirements.txt)
 
