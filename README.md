@@ -8,6 +8,17 @@ digital wayfinding indoors, maps, orientation and indoor routing for a campus, h
 [![license](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/indrz/indrz/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/indrz/indrz.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
 
+## Build the documentation
+The npm run build command builds a bundle.js file that contains all the JavaScript code and content needed to show the site, and creates an index.html file that already contains the site content. Note that this replaces the existing index.html file, so it's best to run this only when deploying the site and to undo changes to index.html if you want to keep working on content.
+
+Clone this repository 
+
+```
+npm install
+npm run build
+
+```
+
 ## Documentation
 
 Our documentation structure and build environment is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) nodejs static
