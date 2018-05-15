@@ -36,14 +36,17 @@ Our documentation structure and build environment is built upon the [mapbox docb
 * [Geoserver](http://geoserver.org) – Web map server to serve and create, maps and data
 * [Openlayers 3](http://openlayers.org) – Slippy client side javascript mapping library
 * [Bootstrap css](http://bootstrap.com/) - css framework bootstrap
-* Not YET implemented [Angularjs](http://angularjs.org/) - Javascript framework
-* Not YET implemented [three.js](http://threejs.org) - 3d Javascript library
 * will be depreciated [jQuery Mobile js](http://http://jquerymobile.com) - mobile web pages made easy
-* Not YET implemented [ionic Framework](http://ionicframework.com) - hybrid mobile apps with html 5
-* Not YET implemented [Gulpjs js](http://gulpjs.com) - js building 
+
+# Roadmap
+
+*  [Vuejs](https://vuejs.org/) - Javascript framework
+*  [three.js](http://threejs.org) - Javascript library
+*  [NativeScript](https://www.nativescript.org/) - hybrid mobile framework
+*  [Webpack](https://webpack.js.org/) - js building, compression...
 
 ## Licence
-indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.  Other than that you can do what you want accordingly 
+indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.
 
 ## Mantra
 Find it fast
