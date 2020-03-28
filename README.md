@@ -1,5 +1,5 @@
 # indrz open source wayfinding, directions api, routing, navigation
-Welcome, the project code is here [GIT code] (https://github.com/indrz/indrz) and the project homepage [www.indrz.com] (http://www.indrz.com)
+Welcome, the project code is here [GIT code] (https://github.com/indrz/indrz) and the project homepage [www.indrz.com] (https://www.indrz.com)
 digital wayfinding indoors, maps, orientation and indoor routing for a campus, hospital, shopping mall, airport... large or small
 
 
@@ -45,16 +45,11 @@ Our documentation structure and build environment is built upon the [mapbox docb
 * [PGRouting](http://pgrouting.org) - Routing extension to PostGIS and Posgresql
 * [Postgresql](http://www.postgresql.org) – Database
 * [Geoserver](http://geoserver.org) – Web map server to serve and create, maps and data
-* [Openlayers 3](http://openlayers.org) – Slippy client side javascript mapping library
-* [Bootstrap css](http://bootstrap.com/) - css framework bootstrap
-* will be depreciated [jQuery Mobile js](http://http://jquerymobile.com) - mobile web pages made easy
+* [Openlayers](http://openlayers.org) – Slippy client side javascript mapping library
+* [Material Design](https://material.io/) - design
+* [Vue.js](https://vuejs.org) Vue.js frontend framework
+* [Nuxt.js](https://nuxtjs.org) vue based frontend framework
 
-# Roadmap
-
-*  [Vuejs](https://vuejs.org/) - Javascript framework
-*  [three.js](http://threejs.org) - Javascript library
-*  [NativeScript](https://www.nativescript.org/) - hybrid mobile framework
-*  [Webpack](https://webpack.js.org/) - js building, compression...
 
 ## Licence
 indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.
