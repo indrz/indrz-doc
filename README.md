@@ -1,7 +1,8 @@
 # INDRZ Documentation
-Welcome homepage [www.indrz.com](https://www.indrz.com). The project is split into [frontend](https://gitlab.com/indrz/indrz-frontend) and [backend](https://gitlab.com/indrz/indrz-backend) code.
+Welcome to INDRZ documentation.  The project homepage [www.indrz.com](https://www.indrz.com). The code is split into [frontend](https://gitlab.com/indrz/indrz-frontend) and
+[backend](https://gitlab.com/indrz/indrz-backend) repositories. 
 
-digital wayfinding indoors, maps, orientation and indoor routing for a campus, hospital, shopping mall, airport... large or small
+The indrz project enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person) for your organization.
 
 
 [![GitHub stars](https://img.shields.io/github/stars/indrz/indrz.svg?style=flat-square)](https://github.com/indrz/indrz/stargazers)
