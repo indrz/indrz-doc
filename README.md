@@ -1,5 +1,6 @@
-# indrz open source wayfinding, directions api, routing, navigation
-Welcome, the project code is here [GIT code] (https://github.com/indrz/indrz) and the project homepage [www.indrz.com] (https://www.indrz.com)
+# INDRZ Documentation
+Welcome homepage [www.indrz.com] (https://www.indrz.com). The project is split into [frontend](https://gitlab.com/indrz/indrz-frontend) and [backend](https://gitlab.com/indrz/indrz-backend) code.
+
 digital wayfinding indoors, maps, orientation and indoor routing for a campus, hospital, shopping mall, airport... large or small
 
 
