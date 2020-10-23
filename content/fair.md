@@ -12,7 +12,7 @@ Users host events regularly with lots of users over a short period of time.
 | ------ | ------ |
 | Exhibitors | companies assigned to a space |
 | Visitors | people visiting the fair |
-| Fair (event) | the fair itself start-date, end-date, name | 
+| Fair (event) | the fair itself | 
 | Fair grounds | the location(s) used by the fair |
 | Fair space | the location(s) polygons used by the exhibitor |
 
@@ -39,13 +39,20 @@ Users host events regularly with lots of users over a short period of time.
 | geometry | cell |
 
 
-### Fair
+### Fair Event
 | Column | header |
 | ------ | ------ |
-| name | cell |
-| fk-fair-id | cell |
-| fk-exhibitor-id | cell |
-| geometry | cell |
+| name | text |
+| start-date | timestamp |
+| end-date | timestamp |
+| logo | image |
+
+### Fair Ground
+| Column | header |
+| ------ | ------ |
+| name | text |
+| logo | image |
+| geometry | MultiPolygon |
 
 
 ### Features
