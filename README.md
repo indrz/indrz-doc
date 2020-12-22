@@ -1,6 +1,6 @@
 # INDRZ Documentation
 Welcome to INDRZ documentation.  The project homepage [www.indrz.com](https://www.indrz.com). The code is split into [frontend](https://gitlab.com/indrz/indrz-frontend) and
-[backend](https://gitlab.com/indrz/indrz-backend) repositories. 
+[backend](https://gitlab.com/indrz/indrz-backend) and documentation repositories. 
 
 The indrz project enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person) for your organization.
 
@@ -10,21 +10,25 @@ The indrz project enables you to serve indoor maps and provide shortest path rou
 [![license](https://img.shields.io/badge/license-AGPL-blue.svg?style=flat-square)](https://raw.githubusercontent.com/indrz/indrz/master/LICENSE)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/indrz/indrz.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
 
-## Build the documentation
-The npm run build command builds a bundle.js file that contains all the JavaScript code and content needed to show the site, and creates an index.html file that already contains the site content. Note that this replaces the existing index.html file, so it's best to run this only when deploying the site and to undo changes to index.html if you want to keep working on content.
 
-Clone this repository 
 
-```
-npm install
-npm run build
+## Quick Start Backend
+Clone the backend repository
 
-```
+`git clone https://gitlab.com/indrz/indrz-backend.git`
 
-## Documentation
+Install the dependancies
 
-Our documentation structure and build environment is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) nodejs static
- documentation generator.  The main content is found under the (content) folder.
+Create a python virtual environment
+
+`pip install -r requirements.txt`
+
+1. create a postgresql database
+1. create a .env file in the settings folder
+1. add database credentials to .env file
+1. activate your python venv
+1. run Django migrate command to populate your empty database   `migrate`
+
 
 [indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
 
@@ -38,6 +42,22 @@ Our documentation structure and build environment is built upon the [mapbox docb
 
 [indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
 
+
+## Build the documentation
+
+Our documentation structure and build environment is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) nodejs static
+ documentation generator.  The main content is found under the (content) folder.
+
+
+The npm run build command builds a bundle.js file that contains all the JavaScript code and content needed to show the site, and creates an index.html file that already contains the site content. Note that this replaces the existing index.html file, so it's best to run this only when deploying the site and to undo changes to index.html if you want to keep working on content.
+
+Clone this repository 
+
+```
+npm install
+npm run build
+
+```
 
 ## Building blocks Libraries we use
 
@@ -81,7 +101,7 @@ Contact: Michael Diener
 
 Email: office@gomogi.com
 
-[www.gomogi.com] (http://www.gomogi.com)
+[www.gomogi.com] (https://www.gomogi.com)
 
 ### What you GET
 The code is for building the routing services, client side javascript to view routes, show maps, integrate maps, change floors, ...  All the functionality is baked in for your own indoor routing app or webpage.  
