@@ -71,8 +71,9 @@ $RECYCLE.BIN/
 
 *.pyc
 
+node_modules
 
-
+yarn.lock
 
 
 
