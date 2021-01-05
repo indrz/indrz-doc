@@ -1,9 +1,9 @@
 # INDRZ Documentation
-This repository contains the documentation to the Frontend, Backend content and the static-site generator code (VuePress)[https://vuepress.vuejs.org/] for the INDRZ documentation site. The project homepage  [INDRZ](https://indrz.com)
+This repository contains the documentation to the Frontend, Backend content and the static-site generator code [VuePress](https://vuepress.vuejs.org/) for the INDRZ documentation site. The project homepage  **[INDRZ](https://indrz.com)**
 
-The indrz project enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person) for your organization.
+**[INDRZ](https://indrz.com)** enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person)
 
-INDRZ is composed of two parts hosted at [GITLAB](https://gitlab.com/indrz), mirrored to (Github)[https://github.com/indrz] [indrz-frontend code](https://gitlab.com/indrz/indrz-frontend) and [indrz-backend code](https://gitlab.com/indrz/indrz-backend)
+**[INDRZ](https://indrz.com)** is composed of two parts hosted at [GITLAB](https://gitlab.com/indrz), mirrored to [Github](https://github.com/indrz) [indrz-frontend code](https://gitlab.com/indrz/indrz-frontend) and [indrz-backend code](https://gitlab.com/indrz/indrz-backend)
   - **indrz-frontend** is the frontend repository built with **Vue**, **Nuxt** and **Vuetify**
   - **indrz-backend** is the backend repository serving the API built with **Django**, **Django Rest Framework**
 
@@ -18,19 +18,24 @@ INDRZ is composed of two parts hosted at [GITLAB](https://gitlab.com/indrz), mir
 ## Quick Start Backend
 Clone the backend repository
 
-`git clone https://gitlab.com/indrz/indrz-backend.git`
+`git clone https://github.com/indrz/indrz-backend.git`
 
-Install the dependancies
+### Docker and Docker-Compose
+The prefrered quick start is using docker-compose. Simple enter the main directory where you cloned the repo and enter:
 
-Create a python virtual environment
+`docker-compose up -d`
 
-`pip install -r requirements.txt`
+It then creates the following:
+1. **Postgresql** database instance with both **PostGIS** and **PgRouting** extensions
+1. Python container to run the backend **Django** application
+1. Frontend nodejs container to run the frontend **Vue**, Nuxt application
+1. **Geoserver** container to serve your maps
 
-1. create a postgresql database
-1. create a .env file in the settings folder
-1. add database credentials to .env file
-1. activate your python venv
-1. run Django migrate command to populate your empty database   `migrate`
+
+## Backend Installation
+
+
+## Frontend Installation
 
 
 [indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
@@ -48,17 +53,18 @@ Create a python virtual environment
 
 ## Build the documentation
 
-Our documentation structure and build environment is built upon the [mapbox docbox] (https://github.com/mapbox/docbox) nodejs static
+Our documentation structure and build environment is built upon [VuePress] (https://github.com/mapbox/docbox) nodejs static
  documentation generator.  The main content is found under the (content) folder.
-
 
 The npm run build command builds a bundle.js file that contains all the JavaScript code and content needed to show the site, and creates an index.html file that already contains the site content. Note that this replaces the existing index.html file, so it's best to run this only when deploying the site and to undo changes to index.html if you want to keep working on content.
 
 Clone this repository 
 
-```
+```bash
 npm install
-npm run build
+//yarn install
+npm run dev
+//yarn run dev
 
 ```
 
@@ -78,7 +84,7 @@ npm run build
 
 
 ## Licence
-indrz is under GNU General Public License v3.0.  The name "indrz" is not allowed to be used by third parties and is a trademark.
+indrz is under [LICENCE](/LICENSE) GNU General Public License v3.0.  The name "indrz" is a trademark and cannot be used without approval.
 
 ## Mantra
 Find it fast
@@ -88,15 +94,21 @@ To make indoor navigation as common as GPS car navigation.
 
 indrz is open source software API to provide indoor maps and routing directions. 
  indrz will allow you to integrate indoor maps and routing services into your homepage or application.  
- If you work at a university or other organization and need an online wayfinder [www.indrz.com] (www.indrz.com) 
+ If you work at a university or other organization and need an online wayfinder [indrz.com](https://indrz.com) 
  will offer our services to build or host it for you.  Our business model is like Mapbox, free open source software 
- and payed services such as data conversion, preparation or import.  The [www.indrz.com] (www.indrz.com) cloud based 
+ and payed services such as data conversion, preparation or import.  The [indrz.com](https://indrz.com) cloud based 
  platform can host the solution for you.
 
 Indrz was developed out of the need to quickly communicate
 how to get from point A to point B in a complex set of buildings.
 Being late for your first class is never a good thing, so
 to help the students out indrz was born.
+
+### Contact & community
+Communication is simple via email ([office@gomogi.com](mailto:office@gomogi.com)). All other discussion should happen  [relevant GitHub issues page](https://github.com/indrz/indrz-frontend/issues).
+
+### Hey join us, get involved
+indrz would love your help. There are more than enough things to get done so we would love your help.  We need people to help out submit bugs, suggest features, write documentation and contribute code.
 
 
 ## Supported and built by:
