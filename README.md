@@ -15,13 +15,18 @@ This repository contains the documentation to the Frontend, Backend content and 
 
 
 
-## Quick Start Backend
-Clone the backend repository
+## Backend Installation
+--- NOTE work in progress--  
 
-`git clone https://github.com/indrz/indrz-backend.git`
+
+
+```bash
+git clone https://github.com/indrz/indrz-be.git indrz
+cd indrz-be
+```
 
 ### Docker and Docker-Compose
-The prefrered quick start is using docker-compose. Simple enter the main directory where you cloned the repo and enter:
+The prefrered quick start is using docker-compose. Simply enter the main directory where you cloned the repo and enter:
 
 `docker-compose up -d`
 
@@ -32,43 +37,33 @@ It then creates the following:
 1. **Geoserver** container to serve your maps
 
 
-## Backend Installation
+### checkout indrz from github
+```bash
+git clone https://github.com/indrz/indrz-be.git indrz
+cd indrz-be
+```
+
+### Load demo data (campus, building, space, poi)
+
+```bash
+pip install -r requirements.txt
+python manage.py migrate --noinput
+python manage.py loaddata initial_ltspacetype_data
+python manage.py loaddata initial_poi_categories
+python manage.py loaddata buildings
+```
 
 
 ## Frontend Installation
-
-
-[indrz Installation] (https://github.com/indrz/indrz-doc/blob/master/content/installation.md)
-
-[indrz-Production Install](content/production-installation.md)
-
-[indrz introduction to API] (https://github.com/indrz/indrz-doc/blob/master/content/introduction.md)
-
-[indrz Directions API] (https://github.com/indrz/indrz-doc/blob/master/content/directions.md)
-
-[indrz Buildings API] (https://github.com/indrz/indrz-doc/blob/master/content/buildings.md)
-
-[indrz Working with GeoData](https://github.com/indrz/indrz-doc/blob/master/content/geodata.md)
+--to-do-- 
 
 
 ## Build the documentation
+--to-do-- 
+`yarn install`
 
-Our documentation structure and build environment is built upon [VuePress] (https://github.com/mapbox/docbox) nodejs static
- documentation generator.  The main content is found under the (content) folder.
 
-The npm run build command builds a bundle.js file that contains all the JavaScript code and content needed to show the site, and creates an index.html file that already contains the site content. Note that this replaces the existing index.html file, so it's best to run this only when deploying the site and to undo changes to index.html if you want to keep working on content.
-
-Clone this repository 
-
-```bash
-npm install
-//yarn install
-npm run dev
-//yarn run dev
-
-```
-
-## Building blocks Libraries we use
+## Components
 
 * [Django](http://djangoproject.com) – Web Framework Backend
 * [Django Rest Framework](http://www.django-rest-framework.org) – Django Rest Web Framework our API
@@ -105,7 +100,7 @@ Being late for your first class is never a good thing, so
 to help the students out indrz was born.
 
 ### Contact & community
-Communication is simple via email ([office@gomogi.com](mailto:office@gomogi.com)). All other discussion should happen  [relevant GitHub issues page](https://github.com/indrz/indrz-frontend/issues).
+Communication is simple via email ([office@gomogi.com](mailto:office@gomogi.com)). All other discussion should happen [relevant GitHub issues page](https://github.com/indrz/indrz-frontend/issues).
 
 ### Hey join us, get involved
 indrz would love your help. There are more than enough things to get done so we would love your help.  We need people to help out submit bugs, suggest features, write documentation and contribute code.
