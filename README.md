@@ -1,8 +1,11 @@
 # INDRZ Documentation
-Welcome to INDRZ documentation.  The project homepage [indrz.com](https://indrz.com). The code is split into [frontend](https://gitlab.com/indrz/indrz-frontend) and
-[backend](https://gitlab.com/indrz/indrz-backend) and documentation repositories. 
+This repository contains the documentation to the Frontend, Backend content and the static-site generator code (VuePress)[https://vuepress.vuejs.org/] for the INDRZ documentation site. The project homepage  [INDRZ](https://indrz.com)
 
 The indrz project enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person) for your organization.
+
+INDRZ is composed of two parts [indrz-frontend code](https://gitlab.com/indrz/indrz-frontend) and [indrz-backend code](https://gitlab.com/indrz/indrz-backend)
+  - **indrz-frontend** is the frontend repository built with **Vue**, **Nuxt** and **Vuetify**
+  - **indrz-backend** is the backend repository serving the API built with **Django**, **Django Rest Framework**
 
 
 [![GitHub stars](https://img.shields.io/github/stars/indrz/indrz.svg?style=flat-square)](https://github.com/indrz/indrz/stargazers)
