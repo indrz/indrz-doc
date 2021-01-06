@@ -3,22 +3,7 @@
 Installation is not the easiest at the moment and is therefor aimed primarily at fellow developers with experience.
 We hope to get a python script or bash script running soon.
 
-### Software and Technology
 
-indrz is built on the shoulders of the following open source projects and should run on any OS such as Ubuntu, CentOS, Redhat
-
-Software      | License
-------------- | -------------
-PostgreSQL 9.6  | PostgreSQL License [similar to the BSD or MIT licenses.] (http://www.postgresql.org/about/licence/)
-Postgis 2.3     | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
-pgRouting 2.0   | GNU General Public License [GPLv2] (http://choosealicense.com/licenses/gpl-2.0/)
-python 3.4 & 2.7    | PYTHON SOFTWARE FOUNDATION LICENSE VERSION 2
-Django 1.10      | Django Software Foundation  a type BSD
-GDAL            | [MIT] (http://choosealicense.com/licenses/mit/) 
-Geoserver       | GNU General Public License (GPLv2), plus Apache 2.0
-Openlayers 3.x  | 2-Clause BSD
-jQuery          | [MIT] (http://choosealicense.com/licenses/mit/) 
-Bootstrap       | MIT copyright 2015 Twitter
 
 
 

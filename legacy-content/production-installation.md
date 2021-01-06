@@ -1,5 +1,5 @@
 # Server Setup Instructions
-The indrz application is a **Django Web Framework  WSGI**  web application.  This means that any **WSGI **capable server can server our site. [Django docs](https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/) include some guidance.  The [Django + uwsgi docs](https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/uwsgi/) are also available online.
+The indrz application is a **Django Web Framework  WSGI**  web application.  This means that any **WSGI **capable server can server our site. [Django docs](https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/) include some guidance.  The [Django + uwsgi docs](https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/uwsgi/) are also available online.
 
 # GIT
 The source code is a GIT repository and for ease of update should be cloned onto the production server, so go ahead and [install GIT ](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine
@@ -7,7 +7,7 @@ The source code is a GIT repository and for ease of update should be cloned onto
     git clone https://github.com/indrz/indrz.git
 
 # Python
- Our application is a Django application and there for requires Python 3.4.x and Django to be installed along with the other python requirements listed in the requirements.txt file.
+ Our application is a Django application and there for requires Python 3.x and Django to be installed along with the other python requirements listed in the requirements.txt file.
 
 ## Install Python virtual env
 This will create a python virtual environment to store the indrz application requirments, keeping the main Python packages separate from the application for better management. [install instructions python virtual env](https://virtualenv.pypa.io/en/stable/installation/)
@@ -147,7 +147,7 @@ You will need to restart the tomcat service for any changes to take place.
 ## Geoserver
 To server our maps we use Geoserver that will run under tomcat. Geoserver is a java application and can be[ downloaded as a WAR file ](http://geoserver.org/release/stable/)  Then all you need to to is extract the .war file into the TOMCAT folder of deployment and it will automatically extract itself and install.  You will need to enable a PORT so that the TILES being served are accessible from outside otherwise visitors to your site will not be able to see the map tiles.
 
-## Postgresql 9.5
+## Postgresql
 [Installation and download instructions are platform specific](https://www.postgresql.org/download/) Please see the official Postgresql documentation for details.
 
 ### PostGIS
