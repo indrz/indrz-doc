@@ -23,3 +23,6 @@ Basic indrz spaces API after importing your organizations data should look simil
     ]
 }
 ```
+
+The next step would be to send a request to your API to get data.  Important is that you retun the 
+id you sent to ensure you find the correct data for display on the map.
