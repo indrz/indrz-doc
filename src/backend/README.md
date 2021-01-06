@@ -1,9 +1,6 @@
-# Backend docs
+# Backend documentation
 
 link to [backend gitlab repo](https://gitlab.com/indrz/indrz-backend)
-
-[[toc]]
-
 
 ## Components
 * [Django](http://djangoproject.com) – Web Framework Backend
@@ -20,6 +17,7 @@ link to [backend gitlab repo](https://gitlab.com/indrz/indrz-backend)
 | Alpen Adria University Klagenfurt      | [campusplan](https://tuwien.ac.at/maps) |
 | Economic University of Vienna     |  [campusplan.aau.at](https://campusplan.aau.at)      |
 | Technical University of Vienna |  [campus.wu.ac.at](https://campus.wu.ac.at)     |
+
 
 ### AutoCAD data integrations
 Services that make this open source project possible 
