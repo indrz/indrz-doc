@@ -75,6 +75,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
+            'guide',
             'test-data',
           ]
         }

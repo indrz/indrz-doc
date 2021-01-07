@@ -1,5 +1,5 @@
 # Backend documentation
-
+The main repository is located at Gitlab at this time.
 link to [backend gitlab repo](https://gitlab.com/indrz/indrz-backend)
 
 ## Components
