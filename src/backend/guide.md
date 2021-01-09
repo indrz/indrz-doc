@@ -1,4 +1,4 @@
-# Backend Guides
+# Backend Guide
 
 
 ## How to connect your systems API to the search ?
@@ -12,7 +12,7 @@ Basic indrz spaces API after importing your organizations data should look simil
 ```json
 {"results":[{
         "type":"Feature",
-        "geometry":{"type":"Polygon", "coordinates":[]},
+        "geometry":{"type":"MultiPolygon", "coordinates":[]},
         "properties": { 
             "id": 1234,                      // indrz unique id
             "name":"Study Hall Bat Cave",    // your organizations room name
