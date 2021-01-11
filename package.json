@@ -7,7 +7,7 @@
     "name": "Michael Diener",
     "email": "office@gomogi.com"
   },
-  "repository": "https://gitlab.com/indrz/indrz-doc.git/indrz-docs",
+  "repository": "https://gitlab.com/indrz/indrz-doc.git",
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src"
