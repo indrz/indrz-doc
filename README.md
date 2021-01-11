@@ -60,18 +60,28 @@ python manage.py loaddata buildings
 
 
 ## Build the documentation
---to-do-- 
-`yarn install`
+Documentation is built with [VuePress](https://vuepress.vuejs.org/).
+
+Start documentation site in development mode:
+
+``yarn run dev``
+
+### Build documentation:
+
+``yarn run build``
+
 
 
 ## Components
-
+**Backend**
 * [Django](http://djangoproject.com) – Web Framework Backend
 * [Django Rest Framework](http://www.django-rest-framework.org) – Django Rest Web Framework our API
 * [PostGIS](http://postgis.net) – Spatial Database extension to Postgresql
 * [PGRouting](http://pgrouting.org) - Routing extension to PostGIS and Posgresql
 * [Postgresql](http://www.postgresql.org) – Database
 * [Geoserver](http://geoserver.org) – Web map server to serve and create, maps and data
+  
+**Frontend**
 * [Openlayers](http://openlayers.org) – Slippy client side javascript mapping library
 * [Vue.js](https://vuejs.org) Vue.js frontend framework
 * [Nuxt.js](https://nuxtjs.org) vue based frontend framework
