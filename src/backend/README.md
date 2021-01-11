@@ -1,4 +1,6 @@
 # Backend documentation
+--- NOTE work in progress--  
+
 The main repository is located at Gitlab at this time.
 link to [backend gitlab repo](https://gitlab.com/indrz/indrz-backend)
 
@@ -8,6 +10,37 @@ link to [backend gitlab repo](https://gitlab.com/indrz/indrz-backend)
 * [PostGIS](http://postgis.net) – Spatial Database extension to Postgresql
 * [PGRouting](http://pgrouting.org) - Routing extension to PostGIS and Posgresql
 * [Postgresql](http://www.postgresql.org) – Database
+
+
+
+## Quick Start
+
+```bash
+git clone https://github.com/indrz/indrz-be.git indrz
+cd indrz-be
+```
+
+### Docker and Docker-Compose
+The prefrered quick start is using docker-compose. Simply enter the main directory where you cloned the repo and enter:
+
+`docker-compose up -d`
+
+It then creates the following:
+1. **Postgresql** database instance with both **PostGIS** and **PgRouting** extensions
+1. Python container to run the backend **Django** application
+1. Frontend nodejs container to run the frontend **Vue**, **Nuxt** application
+1. **Geoserver** container to serve your maps
+
+
+### Load demo data (campus, building, space, poi)
+
+```bash
+pip install -r requirements.txt
+python manage.py migrate --noinput
+python manage.py loaddata initial_ltspacetype_data
+python manage.py loaddata initial_poi_categories
+python manage.py loaddata buildings
+```
 
 
 ## Live indrz applications
