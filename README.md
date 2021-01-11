@@ -1,6 +1,6 @@
 # INDRZ Documentation
 
-This repository contains the documentation to the Frontend, Backend content and the static-site generator code [VuePress](https://vuepress.vuejs.org/) for the INDRZ documentation site. The project homepage  **[indrz](https://indrz.com)**
+Here is the documentation for the Frontend, Backend content and the static-site generator code [VuePress](https://vuepress.vuejs.org/) for the INDRZ documentation site. The project homepage  **[indrz](https://indrz.com)**
 
 [![GitHub stars](https://img.shields.io/github/stars/indrz/indrz.svg?style=flat-square)](https://github.com/indrz/indrz/stargazers)
 [![GitHub release](https://img.shields.io/github/release/indrz/indrz.svg)](https://github.com/indrz/indrz/releases)
@@ -8,7 +8,7 @@ This repository contains the documentation to the Frontend, Backend content and 
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/indrz/indrz.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D)
 
 
-**[indrz](https://indrz.com)** enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person)
+**Project homepage [indrz](https://indrz.com)**, indrz enables you to serve indoor maps and provide shortest path routing to your users. (room to room, building to building, person to person)
 
 **[indrz](https://indrz.com)** is composed of two parts hosted at [GITLAB](https://gitlab.com/indrz), mirrored to [Github](https://github.com/indrz), active on [GitLab indrz-frontend code](https://gitlab.com/indrz/indrz-frontend) and [indrz-backend code](https://gitlab.com/indrz/indrz-backend)
   - **[indrz-frontend code](https://gitlab.com/indrz/indrz-frontend)** is the frontend repository built with **Vue**, **Nuxt** and **Vuetify**
