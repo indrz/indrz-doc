@@ -1,4 +1,5 @@
 # INDRZ Documentation
+This repository is where we (GOMOGI) write and host the INDRZ project documentation. 
 
 Here is the documentation for the Frontend, Backend content and the static-site generator code [VuePress](https://vuepress.vuejs.org/) for the INDRZ documentation site. The project homepage  **[indrz](https://indrz.com)**
 
